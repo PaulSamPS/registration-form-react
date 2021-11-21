@@ -1,0 +1,52 @@
+.dropDown {
+	position: relative;
+}
+
+.selectedLang {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	margin-bottom: 4px;
+	padding: 16px;
+
+	color: #2C2738;
+	border: 1px solid #DBE2EA;
+	border-radius: 6px;
+	box-shadow: 0 4px 8px rgb(44 39 56 / 4%);
+}
+
+.active {
+	border: 2px solid var(--primary);
+}
+
+.modal {
+	position: absolute;
+	z-index: 9999;
+
+	display: flex;
+	flex-direction: column;
+
+	box-sizing: border-box;
+
+	width: 100%;
+
+	border: 1px solid var(--gray-light);
+	border-radius: 6px;
+	background-color: var(--white);
+	box-shadow: 0 4px 8px rgb(44 39 56 / 4%), 0 20px 20px rgb(44 39 56 / 4%);
+
+	.item {
+		padding: 12px 15px;
+
+		list-style: none;
+
+		cursor: pointer;
+
+		color: var(--dark-purple);
+
+		&:hover {
+			background: var(--blue-light);
+		}
+	}
+}

@@ -1,0 +1,22 @@
+body {
+	box-sizing: border-box;
+	margin: 0;
+
+	background-color: #E5E5E5;
+
+	font-family: "IBM Plex Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+	--primary: #0880AE;
+	--white: #FFF;
+	--dark-purple: #2C2738;
+	--gray: #B1B5BF;
+	--gray-light: #DBE2EA;
+	--gray-purple: #756F86;
+	--blue-light: #EBF4F8;
+	--blue-middle: #7C9CBF;
+	--red: #FF7171;
+}

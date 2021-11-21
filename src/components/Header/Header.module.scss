@@ -1,0 +1,28 @@
+.title {
+	margin: 0;
+
+	color: var(--dark-purple);
+}
+
+.subTitle {
+	display: flex;
+
+	margin-top: 8px;
+	margin-bottom: 58px;
+
+	color: var(--dark-purple);
+
+	line-height: 22px;
+
+	p {
+		margin: 0;
+	}
+
+	.signIn {
+		margin-left: 6px;
+
+		cursor: pointer;
+
+		color: var(--primary);
+	}
+}
