@@ -1,1 +1,1 @@
-This project [Demo](https://paulsamps.github.io/registration-form/).
+This project [Demo](https://registration-form-react.herokuapp.com/).
