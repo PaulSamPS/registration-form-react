@@ -31,6 +31,7 @@ export const DropDown = ({className}: DropDownProps): JSX.Element => {
                 [styles.active]: modal
             })} onClick={handleShowModal}>
                 {activeLang[item]}
+                {/* эта svg должна быть в отдельном файле, если с ней не производится манипуляций */}
                 <svg
                     width="16"
                     height="9"
@@ -42,6 +43,7 @@ export const DropDown = ({className}: DropDownProps): JSX.Element => {
             </span>
             {modal &&
             <div className={styles.modal}>
+                {/* стоит поработать над стилем кода, почитать как работают линтеры и зачем все это нужно */}
                 {lang.map((l , index)=> <li key={l.id} className={styles.item} onClick={() => onSelect(index)}>{l.name}</li>)}
             </div>}
         </div>
