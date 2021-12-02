@@ -4,19 +4,22 @@ import styles from './Form.module.scss'
 import cn from 'classnames'
 
 export const Form = (): JSX.Element => {
+    /*
+        * не стоит заводить кучу useState ради одной маленькой формы
+     */
     const [name,setName] = useState<string>('')
     const [email,setEmail] = useState<string>('')
     const [phone,setPhone] = useState<string>('')
     const [nameDirty,setNameDirty] = useState<boolean>(false)
     const [emailDirty,setEmailDirty] = useState<boolean>(false)
     const [phoneDirty,setPhoneDirty] = useState<boolean>(false)
-    const [nameError,setNameError] = useState<string>('Имя не может быть пустым')
+    const [nameError,setNameError] = useState<string>('Имя не может быть пустым' /* подобное выносим в константу */)
     const [emailError,setEmailError] = useState<string>('Email не может быть пустьм')
     const [phoneError,setPhoneError] = useState<string>('Номер телефона не может быть пустым')
     const [activeCheck,setActiveCheck] = useState<boolean>(false)
     const [formValid,setFormValid] = useState<boolean>(false)
 
-    useEffect(() => {
+    useEffect(() => { // эффекты стоит размещать в конце кода перед return
         if (nameError || emailError || phoneError || !activeCheck) {
             setFormValid(false)
         } else {
@@ -26,6 +29,7 @@ export const Form = (): JSX.Element => {
 
     const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value)
+        // паттерны regexp должны быть явно не здесь
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(String(e.target.value).toLowerCase())) {
             setEmailError('Некорректный email')
